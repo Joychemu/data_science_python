@@ -1,0 +1,63 @@
+Step 1: import pandas as pd
+% matplotlib inline
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+sns.set-style('dargrid')
+sns.set(font_scale=1.5)
+
+DATA CLEANING
+e.g movies
+mov_df=pd.read_csv("link")
+mov_df.head()
+mov_df.info()
+mov_df.columns
+mov_df.shape
+
+To CHECK FOR DUplicates
+nw_df=mov_df.append(mov_df)
+nw_df
+
+nw_df.drop_duplicates()
+nw_df.shape
+
+TO RENAME COLUMNS
+nw_df.rename(columns={"usa kenya":"usa_kenya"
+})
+to app to all columns to lower case
+
+nw_df.columns=[col.lower() for col in nw_df]
+
+To check if there are null values
+nw_df.isnull().sum()
+
+To drop null values
+nw_df.dropna()
+
+To drop nullvalues in a ro
+nw_df.drop(axis=1)
+
+
+To replace null values with Mode
+e.g for a column known as country
+con=(list(nw_df['country'].mode()))[0]
+
+nw_df['country'].fillna(c,inplace=True)
+
+To check if all Null values are replaced
+nw_df['country'].isnull().sum()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
